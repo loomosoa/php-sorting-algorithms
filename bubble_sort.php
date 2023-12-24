@@ -21,7 +21,7 @@ class BubbleSort {
 
             for ($i = 1; $i < $sortingArrayLength; $i++) {
                 if ($array[$i-1] > $array[$i]) {
-                    $this->swapElements($array, $i);
+                    $array = $this->swapElements($array, $i);
                     $maxSortingElementIndex = $i;
                 }
             }
