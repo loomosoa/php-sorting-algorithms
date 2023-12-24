@@ -12,19 +12,20 @@ class BubbleSort {
     public function sort(array $array): array
     {
         $sortingArrayLength = count($array);
+        $unsortedElementsNumber = $sortingArrayLength;
 
-        while ($sortingArrayLength != 0) {
+        while ($unsortedElementsNumber != 0) {
 
             $maxSortingElementIndex = 0;
 
-            for ($i = 1; $i < $sortingArrayLength; $i++) {
-                if ($array[$i-1] > $array[$i]) {
+            for ($i = 0; $i < $sortingArrayLength-1; $i++) {
+                if ($array[$i] > $array[$i+1]) {
                     $array = $this->swapElements($array, $i);
-                    $maxSortingElementIndex = $i;
+                    $maxSortingElementIndex = $i+1;
                 }
             }
 
-            $sortingArrayLength = $maxSortingElementIndex;
+            $unsortedElementsNumber = $maxSortingElementIndex;
         }
 
         return $array;
@@ -32,9 +33,9 @@ class BubbleSort {
 
     protected function swapElements(array $array, int $i): array
     {
-        $largerNumber = $array[$i-1];
-        $array[$i-1] = $array[$i];
-        $array[$i] = $largerNumber;
+        $largerNumber = $array[$i];
+        $array[$i] = $array[$i+1];
+        $array[$i+1] = $largerNumber;
         return $array;
     }
    
