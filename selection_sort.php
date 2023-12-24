@@ -1,9 +1,7 @@
 <?php
 declare(strict_types=1);
 
-
 class SelectionSort {
-
 
     /**
      * @param int[]
@@ -54,6 +52,5 @@ $selectionSort = new SelectionSort();
 $array = [14,7,4,1,26,5,8,21,1];
 
 $newArray = $selectionSort->sort($array);
-
 
 print_r($newArray);

@@ -1,9 +1,7 @@
 <?php
 declare(strict_types=1);
 
-
 class BubbleSort {
-
 
     /**
      * Move the largest element to the end of the array, 
@@ -49,9 +47,4 @@ $array = [3,7,4,1,5,8,26,14];
 
 $newArray = $bubbleSort->sort($array);
 
-
 print_r($newArray);
-
-
-
-?>
