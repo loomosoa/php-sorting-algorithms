@@ -11,6 +11,8 @@ class BubbleSort {
     */
     public function sort(array $array): array
     {
+        $timeStart = microtime(true);
+
         $sortingArrayLength = count($array);
         $unsortedElementsNumber = $sortingArrayLength;
 
@@ -27,6 +29,10 @@ class BubbleSort {
 
             $unsortedElementsNumber = $maxSortingElementIndex;
         }
+
+
+        $timeEnd = microtime(true);
+        print_r($timeEnd - $timeStart/60 . "\n");
 
         return $array;
     }

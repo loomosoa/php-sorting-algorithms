@@ -9,6 +9,8 @@ class SelectionSort {
      */
     public function sort(array $array): array
     {
+        $timeStart = microtime(true);
+
         $sortingArrayLength = count($array);
 
         for ($i = 0; $i < $sortingArrayLength; $i++) {
@@ -25,6 +27,9 @@ class SelectionSort {
                $array = $this->swapElements($array, $i, $smallerNumberIndex);
             }
         }
+
+        $timeEnd = microtime(true);
+        print_r($timeEnd - $timeStart/60 . "\n");
 
         return $array;
     }
