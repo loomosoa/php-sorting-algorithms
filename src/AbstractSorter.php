@@ -9,18 +9,66 @@ abstract class AbstractSorter
 
     protected bool $isPrintArray = false;
 
+    protected int $startingTime;
+
+    protected int $sorterNumber = 1;
+
+    protected bool $isPrintSortingInformation = true;
+
+    public function isPrintSortingInformation(): bool
+    {
+        return $this->isPrintSortingInformation;
+    }
+
+    public function setIsPrintSortingInformation(bool $isPrintSortingInformation): void
+    {
+        $this->isPrintSortingInformation = $isPrintSortingInformation;
+    }
+
+    public function getSorterNumber(): int
+    {
+        return $this->sorterNumber;
+    }
+
+    public function setSorterNumber(int $sorterNumber): void
+    {
+        $this->sorterNumber = $sorterNumber;
+    }
+
     public function setSortingArray(array $sortingArray): void
     {
         $this->sortingArray = $sortingArray;
     }
 
+    public function getSortedArray(): array
+    {
+        return $this->sortingArray;
+    }
+
+    protected function countArraySize(): void
+    {
+        $this->arraySize = count($this->sortingArray);
+    }
+
+    protected function printSorterInfoMessage()
+    {
+        if ($this->isPrintSortingInformation) {
+            print("Sorter №: ".static::getSorterNumber()."\n");
+            $sorterReflection = new \ReflectionClass(static::class);
+            $shortName = $sorterReflection->getShortName();
+            print("Array size: ".$this->arraySize."\n");
+            print("Sorter type: ".$shortName."\n");
+        }
+    }
+
     public function printSortingTimeMessage($startingTime, $endingTime): void
     {
-        print("Array size: ".$this->arraySize."\n");
-        print("Sorter type: ".static::class."\n");
-        print("Sorting time: ".($endingTime - $startingTime) . "\n");
-        if ($this->isPrintArray) {
-            print_r($this->sortingArray);
+        if ($this->isPrintSortingInformation) {
+            print("Sorting time, seconds: " . ($endingTime - $startingTime) . "\n");
+            print("######################\n");
+            if ($this->isPrintArray) {
+                print_r($this->sortingArray);
+            }
         }
     }
 
@@ -34,5 +82,16 @@ abstract class AbstractSorter
         $this->isPrintArray = $isPrintArray;
     }
 
+    protected function initSorting(): void
+    {
+        static::countArraySize();
+        static::printSorterInfoMessage();
+        $this->startingTime = microtime(true);
+    }
 
+    protected function finishSorting(): void
+    {
+        $endingTime = microtime(true);
+        static::printSortingTimeMessage($this->startingTime, $endingTime);
+    }
 }

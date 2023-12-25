@@ -14,11 +14,10 @@ class BubbleSort extends AbstractSorter implements Sorter
      */
     public function sort(): void
     {
-        $startingTime = microtime(true);
+        parent::initSorting();
 
         $array = $this->sortingArray;
-        $sortingArrayLength = count($array);
-        $this->arraySize = $sortingArrayLength;
+        $sortingArrayLength = $this->arraySize;
         $unsortedElementsNumber = $sortingArrayLength;
 
         while ($unsortedElementsNumber != 0) {
@@ -35,10 +34,8 @@ class BubbleSort extends AbstractSorter implements Sorter
             $unsortedElementsNumber = $maxSortingElementIndex;
         }
 
-
-        $endingTime = microtime(true);
         $this->sortingArray = $array;
-        static::printSortingTimeMessage($startingTime, $endingTime);
+        parent::finishSorting();
     }
 
     protected function swapElements(array $array, int $i): array

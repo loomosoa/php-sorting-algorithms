@@ -2,16 +2,16 @@
 declare(strict_types=1);
 
 namespace Sorting;
+
 class InsertionSort extends AbstractSorter implements Sorter
 {
 
     public function sort(): void
     {
-        $startingTime = microtime(true);
+        parent::initSorting();
 
         $array = $this->sortingArray;
-        $sortingArrayLength = count($array);
-        $this->arraySize = $sortingArrayLength;
+        $sortingArrayLength = $this->arraySize;
 
         for ($i = 1; $i < $sortingArrayLength; $i++) {
             $sortedElementIndex = $i - 1;
@@ -25,9 +25,8 @@ class InsertionSort extends AbstractSorter implements Sorter
             }
         }
 
-        $endingTime = microtime(true);
         $this->sortingArray = $array;
-        static::printSortingTimeMessage($startingTime, $endingTime);
+        parent::finishSorting();
     }
 
     protected function swapElements(array $array, int $sortedElementIndex):

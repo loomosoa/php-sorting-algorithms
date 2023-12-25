@@ -1,12 +1,11 @@
 <?php
 declare(strict_types=1);
 
-use Sorting\SorterMain;
+use Sorting\SortingResolver;
 
 require 'vendor/autoload.php';
 
 //php sorter.php --type=bubble --size=500 --printArray=false
 
-$sorter = new SorterMain();
-$sorter->sort();
-
+$sortingResolver = new SortingResolver();
+$sortingResolver->sort();

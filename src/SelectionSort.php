@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 namespace Sorting;
+
 class SelectionSort extends AbstractSorter implements Sorter
 {
 
@@ -11,11 +12,10 @@ class SelectionSort extends AbstractSorter implements Sorter
      */
     public function sort(): void
     {
-        $startingTime = microtime(true);
+        parent::initSorting();
 
         $array = $this->sortingArray;
-        $sortingArrayLength = count($array);
-        $this->arraySize = $sortingArrayLength;
+        $sortingArrayLength = $this->arraySize;
 
         for ($i = 0; $i < $sortingArrayLength; $i++) {
             $smallerNumberIndex = $i;
@@ -32,9 +32,8 @@ class SelectionSort extends AbstractSorter implements Sorter
             }
         }
 
-        $endingTime = microtime(true);
         $this->sortingArray = $array;
-        static::printSortingTimeMessage($startingTime, $endingTime);
+        parent::finishSorting();
     }
 
     /**

@@ -5,14 +5,9 @@ class Options
 
     protected string $type = 'bubble';
 
-    protected int $size = 500;
+    protected int $size = 1500;
 
     protected bool $printArray = false;
-
-    public function __constructor()
-    {
-
-    }
 
     public function getType(): string
     {

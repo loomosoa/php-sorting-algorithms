@@ -1,7 +1,7 @@
 <?php
 namespace Sorting;
 
-class SorterMain implements Sorter
+class SortingResolver
 {
 
     public function sort(): void
@@ -9,11 +9,12 @@ class SorterMain implements Sorter
         $this->configureAndSort();
     }
 
-    public function configureAndSort()
+    public function configureAndSort(Options $options = null): void
     {
-        $sorterConfigurator = new SorterConfigurator();
+        $sorterConfigurator = new SorterConfigurator($options);
         $sorterConfigurator->configureSorting();
 
         $sorterConfigurator->getSorter()->sort();
     }
+
 }
