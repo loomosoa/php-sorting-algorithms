@@ -1,22 +1,26 @@
 <?php
 declare(strict_types=1);
 
-class SelectionSort {
+namespace Sorting;
+class SelectionSort extends AbstractSorter implements Sorter
+{
 
     /**
      * @param int[]
      * @return int[]
      */
-    public function sort(array $array): array
+    public function sort(): void
     {
-        $timeStart = microtime(true);
+        $startingTime = microtime(true);
 
+        $array = $this->sortingArray;
         $sortingArrayLength = count($array);
+        $this->arraySize = $sortingArrayLength;
 
         for ($i = 0; $i < $sortingArrayLength; $i++) {
             $smallerNumberIndex = $i;
-                            
-            for ($j = $i+1; $j < $sortingArrayLength; $j++) {
+
+            for ($j = $i + 1; $j < $sortingArrayLength; $j++) {
 
                 if ($array[$smallerNumberIndex] > $array[$j]) {
                     $smallerNumberIndex = $j;
@@ -24,14 +28,13 @@ class SelectionSort {
             }
 
             if ($smallerNumberIndex != $i) {
-               $array = $this->swapElements($array, $i, $smallerNumberIndex);
+                $array = $this->swapElements($array, $i, $smallerNumberIndex);
             }
         }
 
-        $timeEnd = microtime(true);
-        print_r($timeEnd - $timeStart/60 . "\n");
-
-        return $array;
+        $endingTime = microtime(true);
+        $this->sortingArray = $array;
+        static::printSortingTimeMessage($startingTime, $endingTime);
     }
 
     /**
@@ -48,14 +51,5 @@ class SelectionSort {
 
         return $array;
     }
-   
 
 }
-
-$selectionSort = new SelectionSort();
-
-$array = [14,7,4,26,5,8,21,1];
-
-$newArray = $selectionSort->sort($array);
-
-print_r($newArray);

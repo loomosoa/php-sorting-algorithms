@@ -1,0 +1,5 @@
+{
+  "autoload": {
+    "PSR-4": {"Sorting\\": "src/"}
+  }
+}
