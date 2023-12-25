@@ -1,16 +1,12 @@
 <?php
 declare(strict_types=1);
 
-use Sorting\SorterConfigurator;
+use Sorting\SorterMain;
 
 require 'vendor/autoload.php';
 
-//    php sorter.php --type=bubble --size=500 --mode=single
+//php sorter.php --type=bubble --size=500 --printArray=false
 
-$sorterConfigurator = new SorterConfigurator();
-$sorterConfigurator->configureSorting();
+$sorter = new SorterMain();
+$sorter->sort();
 
-$sorterConfigurator->getSorter()->sort();
-
-
-//TODO benchmark

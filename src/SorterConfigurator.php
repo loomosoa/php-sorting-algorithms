@@ -22,20 +22,20 @@ class SorterConfigurator
 
     protected function makeOptions(): void
     {
-        $defaultOptions = $this->makeDefaultOptions();
+        $defaultOptions = $this->makeDefaultOptions(new Options());
         $argv = $_SERVER["argv"];
         $cliOptions = Helper::parseCliOptions($argv);
         $this->updateOptions($defaultOptions, $cliOptions);
     }
 
-    protected function makeDefaultOptions(): array
+    protected function makeDefaultOptions(Options $options): array
     {
-        return [
-            'type' => 'bubble',
-            'size' => 500,
-            'printArray' => false,
-            'mode' => 'single'
+        $options = [
+            'type' => $options->getType(),
+            'size' => $options->getSize(),
+            'printArray' => $options->isPrintArray()
         ];
+        return $options;
     }
 
     protected function updateOptions(array $defaultOptions, array
