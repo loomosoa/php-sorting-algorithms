@@ -10,7 +10,7 @@ require 'vendor/autoload.php';
 $sorterConfigurator = new SorterConfigurator();
 $sorterConfigurator->configureSorting();
 
-$sorterConfigurator->sort();
+$sorterConfigurator->getSorter()->sort();
 
 
 //TODO benchmark

@@ -13,13 +13,6 @@ class SorterConfigurator
         return $this->sorter;
     }
 
-
-    public function sort()
-    {
-
-
-    }
-
     public function configureSorting(): void
     {
         $this->makeOptions();
@@ -63,19 +56,18 @@ class SorterConfigurator
     {
         switch($sorterType):
             case "bubble":
-                $sorter = new BubbleSort();
+                $this->sorter = new BubbleSort();
                 break;
             case "selection":
-                $sorter = new SelectionSort();
+                $this->sorter = new SelectionSort();
                 break;
             case "insertion":
-                $sorter = new InsertionSort();
+                $this->sorter = new InsertionSort();
                 break;
             default:
                 throw new \http\Exception\InvalidArgumentException("Unknown sorter");
         endswitch;
 
-        $this->sorter = $sorter;
         $this->sorter->setSortingArray(Helper::generateArrayForSort($this->options->size));
         $this->sorter->setIsPrintArray($this->options->printArray);
     }
