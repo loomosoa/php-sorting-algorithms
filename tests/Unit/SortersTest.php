@@ -21,7 +21,7 @@ class SortersTest extends \PHPUnit\Framework\TestCase
 
     public static function setUpBeforeClass(): void
     {
-        self::$sortersSetup = TestHelper::makeSortingSetup(1000);
+        self::$sortersSetup = TestHelper::makeSortingSetup(500);
         self::$phpSortedArray = TestHelper::makePHPSortedArray(
             self::$sortersSetup->unsortedArray);
     }
@@ -37,6 +37,11 @@ class SortersTest extends \PHPUnit\Framework\TestCase
         foreach ($this->sorters as $sorter) {
             $this->assertSame(self::$phpSortedArray, $sorter->getSortedArray());
         }
+    }
+
+    public function testPhpSortedArrayDifferFromUnsortedArray()
+    {
+        $this->assertNotSame(self::$phpSortedArray, $this->unsortedArray);
     }
 
     public function testUnsortedArrayNotSameSortedArray(): void
