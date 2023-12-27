@@ -49,9 +49,8 @@ class TestHelper
 
     public static function makePHPSortedArray(array $array): array
     {
-        $arrayForPHPsort = $array;
-        sort($arrayForPHPsort);
-        return $arrayForPHPsort;
+        sort($array);
+        return $array;
     }
 
 }

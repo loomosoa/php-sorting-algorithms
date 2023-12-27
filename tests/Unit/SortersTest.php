@@ -15,24 +15,27 @@ class SortersTest extends \PHPUnit\Framework\TestCase
 
     protected array $sorters;
 
-    protected array $phpSortedArray;
+    protected static ?\StdClass $sortersSetup;
+
+    protected static ?array $phpSortedArray;
+
+    public static function setUpBeforeClass(): void
+    {
+        self::$sortersSetup = TestHelper::makeSortingSetup(1000);
+        self::$phpSortedArray = TestHelper::makePHPSortedArray(
+            self::$sortersSetup->unsortedArray);
+    }
 
     protected function setUp(): void
     {
-        $sorterSetup = TestHelper::makeSortingSetup(500);
-
-        $this->unsortedArray = $sorterSetup->unsortedArray;
-        $this->sorters = $sorterSetup->sorters;
-
-        $this->phpSortedArray = TestHelper::makePHPSortedArray(
-            $this->unsortedArray);
+        $this->unsortedArray = self::$sortersSetup->unsortedArray;
+        $this->sorters = self::$sortersSetup->sorters;
     }
 
     public function testSort(): void
     {
         foreach ($this->sorters as $sorter) {
-            $this->assertSame($this->phpSortedArray,
-                $sorter->getSortedArray());
+            $this->assertSame(self::$phpSortedArray, $sorter->getSortedArray());
         }
     }
 
@@ -58,6 +61,12 @@ class SortersTest extends \PHPUnit\Framework\TestCase
 
             $this->assertTrue($isArraySorted);
         }
+    }
+
+    public static function tearDownAfterClass(): void
+    {
+        self::$sortersSetup = null;
+        self::$phpSortedArray = null;
     }
 
 }
