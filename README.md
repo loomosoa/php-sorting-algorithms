@@ -23,7 +23,7 @@ insertion,quick,phpStandard
 
 >Sorter №: 1\
 >Array size: 2000\
->Sorter type: BubbleSort\
+>Sorter type: **BubbleSort**\
 >Sorting time, seconds: 15.07560801506
 
 >Sorter №: 2\
