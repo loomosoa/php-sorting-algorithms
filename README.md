@@ -15,9 +15,9 @@
 
 ## Output
 
->Sorter №: 1
->Array size: 2000
->Sorter type: BubbleSort
+>Sorter №: 1\
+>Array size: 2000\
+>Sorter type: BubbleSort<br>
 >Sorting time, seconds: 15.07560801506
 
 Sorter №: 2
