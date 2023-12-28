@@ -20,6 +20,12 @@ php sorters_benchmark.php --size=2000 --sortersList=bubble,selection,
 insertion,quick,phpStandard
 ```
 
+## Options
+
+- size {int}: Размер массива 
+- sortersList {string,}: Используемые сортировщики
+- printArray {bool, default false}: Вывод отсортированного массива в шел
+
 ## Output
 
 >Sorter №: 1\

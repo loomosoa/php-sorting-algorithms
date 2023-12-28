@@ -23,8 +23,12 @@ class SortersFactory
             case "phpstandard":
                 $sorter = new PhpStandardSort();
                 break;
+            case "quicklomuto":
+                $sorter = new QuickLomutoSort();
+                break;
             default:
-                throw new \http\Exception\InvalidArgumentException("Unknown sorter");
+                throw new \InvalidArgumentException(
+                    "Unknown sorter: ".$sorterType);
         endswitch;
         return $sorter;
     }

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 namespace Sorting;
 
 class Helper
@@ -47,5 +48,11 @@ class Helper
             }
         }
         return $sorters;
+    }
+
+    public static function makeErrorMessage(\Throwable $e): string
+    {
+        return PHP_EOL."Exception: ".
+            $e->getMessage()."|".$e->getFile()."|".$e->getLine().PHP_EOL;
     }
 }

@@ -12,14 +12,18 @@ class SortersBenchmark
 
     public function benchmark(): void
     {
-        $sortersTypeList = $this->makeSortersTypeList();
+        try {
+            $sortersTypeList = $this->makeSortersTypeList();
 
-        foreach ($sortersTypeList as $k => $sorterType) {
-            SorterNumberRegister::setSorterNumber($k+1);
+            foreach ($sortersTypeList as $sorterType) {
+                SorterNumberRegister::incrementSorterNumber();
 
-            $this->options->setType($sorterType);
-            $sortingResolver = new SortingResolver();
-            $sortingResolver->configureAndSort($this->options);
+                $this->options->setType($sorterType);
+                $sortingResolver = new SortingResolver();
+                $sortingResolver->configureAndSort($this->options);
+            }
+        } catch (\Throwable $e) {
+            print(Helper::makeErrorMessage($e));
         }
     }
 
@@ -43,11 +47,10 @@ class SortersBenchmark
         $files = scandir(__DIR__);
         $sorters = [];
         foreach ($files as $fileName) {
-            preg_match('/[a-zA-Z]*Sort\.php$/', $fileName, $matches);
+            preg_match('/[a-zA-Z]+Sort\.php$/', $fileName, $matches);
             if (isset($matches[0])) {
-                preg_match('/[a-zA-Z]*[^Sort\.php]/', $matches[0],
-                    $anotherMatches);
-                $sorters[] = strtolower($anotherMatches[0]);
+                $sorterType = str_replace("Sort.php","",$matches[0]);
+                $sorters[] = strtolower($sorterType);
             }
         }
 
