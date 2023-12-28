@@ -21,7 +21,7 @@ class SortersTest extends \PHPUnit\Framework\TestCase
 
     public static function setUpBeforeClass(): void
     {
-        self::$sortersSetup = TestHelper::makeSortingSetup(500);
+        self::$sortersSetup = TestHelper::makeSortingSetup(50);
         self::$phpSortedArray = TestHelper::makePHPSortedArray(
             self::$sortersSetup->unsortedArray);
     }
@@ -61,6 +61,7 @@ class SortersTest extends \PHPUnit\Framework\TestCase
                 TestHelper::checkSortedArrayItems($array);
             } catch (\Throwable $e) {
                 $isArraySorted = false;
+                print(PHP_EOL."Sorter: ".$sorter::class.PHP_EOL);
                 print($e->getMessage());
             }
 

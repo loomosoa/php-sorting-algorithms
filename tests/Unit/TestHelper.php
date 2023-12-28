@@ -39,9 +39,9 @@ class TestHelper
         for ($i=0; $i < count($array); $i++) {
             if (isset($array[$i+1])) {
                 if ($array[$i] > $array[$i+1]) {
-                    throw new \Exception("Array is not ascending sorted. "
+                    throw new \Exception(PHP_EOL."Array is not ascending sorted. "
                         . "index " .$i.": ".$array[$i] ." > "
-                        . "index ". ($i+1).": ". $array[$i+1]);
+                        . "index ". ($i+1).": ". $array[$i+1].PHP_EOL);
                 }
             }
         }
