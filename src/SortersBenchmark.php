@@ -29,7 +29,9 @@ class SortersBenchmark
         $sortersTypesList = $this->getSortersTypesList();
 
         if (!empty($cliOptions['sortersList'])) {
-            $optionSorters = explode(',',$cliOptions['sortersList']);
+            $optionSorters = array_map(
+                fn($item) => strtolower($item),
+                explode(',', $cliOptions['sortersList']));
             $sortersTypesList = array_intersect($optionSorters,
                 $sortersTypesList);
         }
