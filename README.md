@@ -6,7 +6,9 @@
 
 В результате видно время, затраченное на сортировку
 
-```php sorters_benchmark.php --size=500
+```php
+php sorters_benchmark.php --size=500
+```
 
 ```php sorters_benchmark.php --size=2000 --sortersList=bubble,selection,insertion
 
