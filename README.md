@@ -2,9 +2,10 @@
 
 Реализация и сравнение быстродействия алгоритмов сортировки.
 
-Создается рандомный массив целых чисел и сортируется в порядке возрастания.
+Создается рандомный массив целых чисел и сортируется в порядке возрастания 
+(ascending).
 
-В результате видно время, затраченное на сортировку
+В результате видно время, затраченное на сортировку.
 
 ```php
 php sorters_benchmark.php --size=500
@@ -24,24 +25,24 @@ insertion,quick,phpStandard
 >Sorter №: 1\
 >Array size: 2000\
 >Sorter type: **BubbleSort**\
->Sorting time, seconds: **15.07560801506**
+>Sorting time, seconds: **15.627**
 
 >Sorter №: 2\
 >Array size: 2000\
 >Sorter type: **InsertionSort**\
->Sorting time, seconds: **13.360831022263**
+>Sorting time, seconds: **14.12**
 
 >Sorter №: 3\
 >Array size: 2000\
->Sorter type: <span style="color:blue">PhpStandardSort</span>\
->Sorting time, seconds: **0.36351990699768**
+>Sorter type: **PhpStandardSort**\
+>Sorting time, seconds: **0.123**
 
 >Sorter №: 4\
 >Array size: 2000\
 >Sorter type: **QuickSort**\
->Sorting time, seconds: **0.4583740234375**
+>Sorting time, seconds: **0.218**
 
 >Sorter №: 5\
 >Array size: 2000\
 >Sorter type: **SelectionSort**\
->Sorting time, seconds: **1.0960779190063**
+>Sorting time, seconds: **0.748**
