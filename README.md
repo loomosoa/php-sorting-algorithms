@@ -14,3 +14,29 @@
 
 
 ## Output
+
+`Sorter №: 1
+Array size: 2000
+Sorter type: BubbleSort
+Sorting time, seconds: 15.07560801506
+
+Sorter №: 2
+Array size: 2000
+Sorter type: InsertionSort
+Sorting time, seconds: 13.360831022263
+
+Sorter №: 3
+Array size: 2000
+Sorter type: PhpStandardSort
+Sorting time, seconds: 0.36351990699768
+
+Sorter №: 4
+Array size: 2000
+Sorter type: QuickSort
+Sorting time, seconds: 0.4583740234375
+
+Sorter №: 5
+Array size: 2000
+Sorter type: SelectionSort
+Sorting time, seconds: 1.0960779190063
+`

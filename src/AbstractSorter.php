@@ -53,19 +53,20 @@ abstract class AbstractSorter
     protected function printSorterInfoMessage()
     {
         if ($this->isPrintSortingInformation) {
+            print("\n");
             print("Sorter №: ".static::getSorterNumber()."\n");
             $sorterReflection = new \ReflectionClass(static::class);
             $shortName = $sorterReflection->getShortName();
             print("Array size: ".$this->arraySize."\n");
-            print("Sorter type: ".$shortName."\n");
+            print("Sorter type: "."\e[34m".$shortName."\e[0m \n");
         }
     }
 
     public function printSortingTimeMessage($startingTime, $endingTime): void
     {
         if ($this->isPrintSortingInformation) {
-            print("Sorting time, seconds: " . ($endingTime - $startingTime) . "\n");
-            print("######################\n");
+            print("Sorting time, seconds: "
+                ."\e[32m". ($endingTime - $startingTime. "\e[0m"). "\n");
             if ($this->isPrintArray) {
                 print_r($this->sortingArray);
             }
