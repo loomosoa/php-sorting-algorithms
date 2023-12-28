@@ -33,7 +33,7 @@ insertion,quick,phpStandard
 
 >Sorter №: 3\
 >Array size: 2000\
->Sorter type: **PhpStandardSort**\
+>Sorter type: <span style="color:blue">PhpStandardSort</span>\
 >Sorting time, seconds: **0.36351990699768**
 
 >Sorter №: 4\

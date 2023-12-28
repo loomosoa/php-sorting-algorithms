@@ -52,6 +52,7 @@ abstract class AbstractSorter
 
     protected function printSorterInfoMessage()
     {
+
         if ($this->isPrintSortingInformation) {
             print("\n");
             print("Sorter №: ".static::getSorterNumber()."\n");
@@ -66,7 +67,8 @@ abstract class AbstractSorter
     {
         if ($this->isPrintSortingInformation) {
             print("Sorting time, seconds: "
-                ."\e[32m". ($endingTime - $startingTime. "\e[0m"). "\n");
+                ."\e[32m". (round(($endingTime - $startingTime), 3). "\e[0m").
+            "\n");
             if ($this->isPrintArray) {
                 print_r($this->sortingArray);
             }
