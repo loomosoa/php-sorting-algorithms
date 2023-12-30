@@ -31,6 +31,7 @@ class LomutoQuickSort extends AbstractSorter implements Sorter
 
     protected function lomutoQuickSort(array $array, int $low, int $high)
     {
+        //TODO: decide
         print(PHP_EOL."Recursion depth: ".\Ev::depth().PHP_EOL);
 
         if($low < $high){
