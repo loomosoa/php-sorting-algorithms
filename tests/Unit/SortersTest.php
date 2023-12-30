@@ -21,7 +21,7 @@ class SortersTest extends \PHPUnit\Framework\TestCase
 
     public static function setUpBeforeClass(): void
     {
-        self::$sortersSetup = TestHelper::makeSortingSetup(50);
+        self::$sortersSetup = TestHelper::makeSortingSetup(500);
         self::$phpSortedArray = TestHelper::makePHPSortedArray(
             self::$sortersSetup->unsortedArray);
     }

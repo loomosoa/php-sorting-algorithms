@@ -26,6 +26,12 @@ insertion,quick,phpStandard
 - sortersList {string,}: Используемые сортировщики
 - printArray {bool, default false}: Вывод отсортированного массива в шел
 
+## Convention
+
+Соглашение об именовании сортировщиков.
+
+(sorter name)Sort.php
+
 ## Output
 
 >Sorter №: 1\
