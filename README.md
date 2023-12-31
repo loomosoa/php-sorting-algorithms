@@ -59,6 +59,8 @@ php sorters_benchmark.php --size=200
 >Sorter type: **SelectionSort**\
 >Sorting time, seconds: **0.906**
 
+---
+
 ```php
 php sorters_benchmark.php --size=20000 
 ```
