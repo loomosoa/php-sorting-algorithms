@@ -4,11 +4,6 @@ namespace Sorting;
 class QuickSort extends AbstractSorter implements Sorter
 {
 
-    public function getSortingArray(): array
-    {
-        return $this->sortingArray;
-    }
-
     protected function partOfQuickSort(array $array, int $left, int
     $right)
     {

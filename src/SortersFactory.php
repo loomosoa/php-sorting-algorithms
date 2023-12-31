@@ -26,9 +26,6 @@ class SortersFactory
             case "lomutoquick":
                 $sorter = new LomutoQuickSort();
                 break;
-            case "lomutoquickalt":
-                $sorter = new LomutoQuickAltSort();
-                break;
             default:
                 throw new \InvalidArgumentException(
                     "Unknown sorter: ".$sorterType);

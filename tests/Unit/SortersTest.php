@@ -72,9 +72,10 @@ class SortersTest extends \PHPUnit\Framework\TestCase
 
     public function testAllSortersClassesUsed(): void
     {
-        $sortersNumberHaveToBe = count(self::$sortersSetup->sortersClasses);
+        $sortersClasses = TestHelper::getSortersClassesList();
+        $sortersNumberHaveToBe = count($sortersClasses);
         $sortersUsed = 0;
-        foreach(self::$sortersSetup->sortersClasses as $sorterClass) {
+        foreach($sortersClasses as $sorterClass) {
             foreach ($this->sorters as $sorter) {
                 if ($sorter instanceof $sorterClass) {
                     $sortersUsed++;

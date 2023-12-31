@@ -37,17 +37,19 @@ class TestHelper
             $result->sorters = $sorters;
             $result->unsortedArray = $unsortedArray;
 
-            $result->sortersClasses = [
-                BubbleSort::class,
-                SelectionSort::class,
-                InsertionSort::class,
-                QuickSort::class,
-                LomutoQuickSort::class,
-                LomutoQuickAltSort::class,
-                PhpStandardSort::class
-            ];
-
             return $result;
+    }
+
+    public static function getSortersClassesList(): array
+    {
+        return [
+            BubbleSort::class,
+            SelectionSort::class,
+            InsertionSort::class,
+            QuickSort::class,
+            LomutoQuickSort::class,
+            PhpStandardSort::class
+        ];
     }
 
     public static function checkSortedArrayItems(array $array): void
