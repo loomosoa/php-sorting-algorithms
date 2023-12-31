@@ -26,7 +26,11 @@ class BubbleSort extends AbstractSorter implements Sorter
 
             for ($i = 0; $i < $sortingArrayLength - 1; $i++) {
                 if ($array[$i] > $array[$i + 1]) {
-                    $array = $this->swapElements($array, $i);
+
+                    $largerNumber = $array[$i];
+                    $array[$i] = $array[$i + 1];
+                    $array[$i + 1] = $largerNumber;
+
                     $maxSortingElementIndex = $i + 1;
                 }
             }
@@ -37,13 +41,4 @@ class BubbleSort extends AbstractSorter implements Sorter
         $this->sortingArray = $array;
         parent::finishSorting();
     }
-
-    protected function swapElements(array $array, int $i): array
-    {
-        $largerNumber = $array[$i];
-        $array[$i] = $array[$i + 1];
-        $array[$i + 1] = $largerNumber;
-        return $array;
-    }
-
 }

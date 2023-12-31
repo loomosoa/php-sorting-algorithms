@@ -28,27 +28,14 @@ class SelectionSort extends AbstractSorter implements Sorter
             }
 
             if ($smallerNumberIndex != $i) {
-                $array = $this->swapElements($array, $i, $smallerNumberIndex);
+                $smallerNumber = $array[$smallerNumberIndex];
+                $array[$smallerNumberIndex] = $array[$i];
+                $array[$i] = $smallerNumber;
             }
         }
 
         $this->sortingArray = $array;
         parent::finishSorting();
-    }
-
-    /**
-     * @param $array
-     * @param $i
-     * @param $smallerNumberIndex
-     * @return array
-     */
-    protected function swapElements($array, $i, $smallerNumberIndex): array
-    {
-        $smallerNumber = $array[$smallerNumberIndex];
-        $array[$smallerNumberIndex] = $array[$i];
-        $array[$i] = $smallerNumber;
-
-        return $array;
     }
 
 }

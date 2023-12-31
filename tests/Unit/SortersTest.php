@@ -19,6 +19,8 @@ class SortersTest extends \PHPUnit\Framework\TestCase
 
     protected static ?array $phpSortedArray;
 
+    //TODO: добавить проверку классов сортировщиков вручную
+
     public static function setUpBeforeClass(): void
     {
         self::$sortersSetup = TestHelper::makeSortingSetup(500);

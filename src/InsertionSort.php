@@ -20,22 +20,17 @@ class InsertionSort extends AbstractSorter implements Sorter
                 ($sortedElementIndex > -1)
                 &&
                 ($array[$sortedElementIndex] > $array[$sortedElementIndex + 1])) {
-                $array = $this->swapElements($array, $sortedElementIndex);
+
+                $temp = $array[$sortedElementIndex];
+                $array[$sortedElementIndex] = $array[$sortedElementIndex + 1];
+                $array[$sortedElementIndex + 1] = $temp;
+
                 $sortedElementIndex--;
             }
         }
 
         $this->sortingArray = $array;
         parent::finishSorting();
-    }
-
-    protected function swapElements(array $array, int $sortedElementIndex):
-    array
-    {
-        $temp = $array[$sortedElementIndex];
-        $array[$sortedElementIndex] = $array[$sortedElementIndex + 1];
-        $array[$sortedElementIndex + 1] = $temp;
-        return $array;
     }
 
 }
