@@ -3,6 +3,7 @@ declare(strict_types=1);
 namespace Tests\Unit;
 
 use Sorting\BubbleSort;
+use Sorting\Helper;
 use Sorting\Sorter;
 
 /**
@@ -18,8 +19,6 @@ class SortersTest extends \PHPUnit\Framework\TestCase
     protected static ?\StdClass $sortersSetup;
 
     protected static ?array $phpSortedArray;
-
-    //TODO: добавить проверку классов сортировщиков вручную
 
     public static function setUpBeforeClass(): void
     {
@@ -41,7 +40,7 @@ class SortersTest extends \PHPUnit\Framework\TestCase
         }
     }
 
-    public function testPhpSortedArrayDifferFromUnsortedArray()
+    public function testPhpSortedArrayDifferFromUnsortedArray(): void
     {
         $this->assertNotSame(self::$phpSortedArray, $this->unsortedArray);
     }
@@ -69,6 +68,20 @@ class SortersTest extends \PHPUnit\Framework\TestCase
 
             $this->assertTrue($isArraySorted);
         }
+    }
+
+    public function testAllSortersClassesUsed(): void
+    {
+        $sortersNumberHaveToBe = count(self::$sortersSetup->sortersClasses);
+        $sortersUsed = 0;
+        foreach(self::$sortersSetup->sortersClasses as $sorterClass) {
+            foreach ($this->sorters as $sorter) {
+                if ($sorter instanceof $sorterClass) {
+                    $sortersUsed++;
+                }
+            }
+        }
+        $this->assertEquals($sortersNumberHaveToBe, $sortersUsed);
     }
 
     public static function tearDownAfterClass(): void

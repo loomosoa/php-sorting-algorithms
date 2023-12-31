@@ -3,6 +3,12 @@ namespace Tests\Unit;
 
 use Sorting\BubbleSort;
 use Sorting\Helper;
+use Sorting\InsertionSort;
+use Sorting\LomutoQuickAltSort;
+use Sorting\LomutoQuickSort;
+use Sorting\PhpStandardSort;
+use Sorting\QuickSort;
+use Sorting\SelectionSort;
 use Sorting\Sorter;
 use Sorting\SorterConfigurator;
 use Sorting\SortersBenchmark;
@@ -30,6 +36,16 @@ class TestHelper
 
             $result->sorters = $sorters;
             $result->unsortedArray = $unsortedArray;
+
+            $result->sortersClasses = [
+                BubbleSort::class,
+                SelectionSort::class,
+                InsertionSort::class,
+                QuickSort::class,
+                LomutoQuickSort::class,
+                LomutoQuickAltSort::class,
+                PhpStandardSort::class
+            ];
 
             return $result;
     }
