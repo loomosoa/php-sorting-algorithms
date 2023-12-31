@@ -23,8 +23,8 @@ class SortersFactory
             case "phpstandard":
                 $sorter = new PhpStandardSort();
                 break;
-            case "lomutoquick":
-                $sorter = new LomutoQuickSort();
+            case "quicklomuto":
+                $sorter = new QuickLomutoSort();
                 break;
             default:
                 throw new \InvalidArgumentException(

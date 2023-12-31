@@ -5,7 +5,7 @@ use Sorting\BubbleSort;
 use Sorting\Helper;
 use Sorting\InsertionSort;
 use Sorting\LomutoQuickAltSort;
-use Sorting\LomutoQuickSort;
+use Sorting\QuickLomutoSort;
 use Sorting\PhpStandardSort;
 use Sorting\QuickSort;
 use Sorting\SelectionSort;
@@ -47,7 +47,7 @@ class TestHelper
             SelectionSort::class,
             InsertionSort::class,
             QuickSort::class,
-            LomutoQuickSort::class,
+            QuickLomutoSort::class,
             PhpStandardSort::class
         ];
     }

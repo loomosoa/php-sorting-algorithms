@@ -7,19 +7,6 @@
 
 В результате видно время, затраченное на сортировку.
 
-```php
-php sorters_benchmark.php --size=500
-```
-
-```php
-php sorters_benchmark.php --size=2000 --sortersList=bubble,selection,insertion
-```
-
-```php
-php sorters_benchmark.php --size=2000 --sortersList=bubble,selection,
-insertion,quick,phpStandard
-```
-
 ## Options
 
 - size {int}: Размер массива 
@@ -32,29 +19,46 @@ insertion,quick,phpStandard
 
 (sorter name)Sort.php
 
+
+```php
+php sorters_benchmark.php --size=200 
+```
+
 ## Output
 
->Sorter №: 1\
->Array size: 2000\
->Sorter type: **BubbleSort**\
->Sorting time, seconds: **15.627**
+Sorter №: 1
+Array size: 200
+Sorter type: BubbleSort
+Sorting time, seconds: 0.863
 
->Sorter №: 2\
->Array size: 2000\
->Sorter type: **InsertionSort**\
->Sorting time, seconds: **14.12**
+Sorter №: 2
+Array size: 200
+Sorter type: InsertionSort
+Sorting time, seconds: 0.881
 
->Sorter №: 3\
->Array size: 2000\
->Sorter type: **PhpStandardSort**\
->Sorting time, seconds: **0.123**
+Sorter №: 3
+Array size: 200
+Sorter type: PhpStandardSort
+Sorting time, seconds: 0.884
 
->Sorter №: 4\
->Array size: 2000\
->Sorter type: **QuickSort**\
->Sorting time, seconds: **0.218**
+Sorter №: 4
+Array size: 200
+Sorter type: QuickLomutoSort
+Sorting time, seconds: 0.889
 
->Sorter №: 5\
->Array size: 2000\
->Sorter type: **SelectionSort**\
->Sorting time, seconds: **0.748**
+Sorter №: 5
+Array size: 200
+Sorter type: QuickSort
+Sorting time, seconds: 0.898
+
+Sorter №: 6
+Array size: 200
+Sorter type: SelectionSort
+Sorting time, seconds: 0.906
+
+
+```php
+php sorters_benchmark.php --size=20000 
+```
+
+## Output
