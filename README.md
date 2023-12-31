@@ -19,8 +19,6 @@
 
 (sorter name)Sort.php
 
----
-
 ## Use
 
 ```php
