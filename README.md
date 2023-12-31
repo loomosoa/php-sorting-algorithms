@@ -19,6 +19,9 @@
 
 (sorter name)Sort.php
 
+---
+
+## Use
 
 ```php
 php sorters_benchmark.php --size=200 
