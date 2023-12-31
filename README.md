@@ -25,7 +25,7 @@
 php sorters_benchmark.php --size=200 
 ```
 
-## Output
+### Output
 
 >Sorter №: 1\
 >Array size: 200\
@@ -63,7 +63,7 @@ php sorters_benchmark.php --size=200
 php sorters_benchmark.php --size=20000 
 ```
 
-## Output
+### Output
 
 >Sorter №: 1\
 >Array size: 20000\
