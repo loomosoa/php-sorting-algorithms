@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 namespace Sorting;
 
 class QuickSort extends AbstractSorter implements Sorter

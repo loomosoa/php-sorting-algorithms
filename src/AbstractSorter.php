@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 namespace Sorting;
 
 abstract class AbstractSorter
@@ -9,7 +10,7 @@ abstract class AbstractSorter
 
     protected bool $isPrintArray = false;
 
-    protected int $startingTime;
+    protected float $startingTime;
 
     protected int $sorterNumber = 1;
 
@@ -63,7 +64,8 @@ abstract class AbstractSorter
         }
     }
 
-    public function printSortingTimeMessage($startingTime, $endingTime): void
+    public function printSortingTimeMessage(float $startingTime,
+                                            float $endingTime): void
     {
         if ($this->isPrintSortingInformation) {
             print("Sorting time, seconds: "
